@@ -6,7 +6,10 @@ int	exit_game(void *param)
 	if (data()->mlx_img)
 		mlx_destroy_image(data()->mlx, data()->mlx_img);
 	if (data()->ball)
+	{
+		mlx_destroy_image(data()->mlx, data()->ball->img);
 		free(data()->ball);
+	}
 	if (data()->bar)
 		free(data()->bar);
 	if (data()->win)
